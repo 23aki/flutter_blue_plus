@@ -737,18 +737,20 @@ const MtuSizeResponse$json = const {
   ],
 };
 
+/// Descriptor for `MtuSizeResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List mtuSizeResponseDescriptor = $convert.base64Decode(
+    'Cg9NdHVTaXplUmVzcG9uc2USGwoJcmVtb3RlX2lkGAEgASgJUghyZW1vdGVJZBIQCgNtdHUYAiABKA1SA210dQ==');
+
+@$core.Deprecated('Use deviceStateResponseDescriptor instead')
 const RequestConnectionPriorityRequest$json = const {
   '1': 'RequestConnectionPriority',
   '2': const [
     const {'1': 'remote_id', '3': 1, '4': 1, '5': 9, '10': 'remoteId'},
-    const {'1': 'priority', '3': 2, '4': 1, '5': 5, '10': 'mtuSize'},
+    const {'1': 'priority', '3': 2, '4': 1, '5': 5, '10': 'priority'},
     const {'1': 'success', '3': 3, '4': 1, '5': 8, '10': 'success'},
   ]
 };
 
-/// Descriptor for `MtuSizeResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List mtuSizeResponseDescriptor = $convert.base64Decode(
-    'Cg9NdHVTaXplUmVzcG9uc2USGwoJcmVtb3RlX2lkGAEgASgJUghyZW1vdGVJZBIQCgNtdHUYAiABKA1SA210dQ==');
 @$core.Deprecated('Use readRssiResultDescriptor instead')
 const ReadRssiResult$json = const {
   '1': 'ReadRssiResult',

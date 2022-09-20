@@ -3162,12 +3162,28 @@ class MtuSizeResponse extends $pb.GeneratedMessage {
 }
 
 class RequestConnectionPriorityRequest extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i =
-      new $pb.BuilderInfo('RequestConnectionPriority')
-        ..aOS(1, 'remoteId')
-        ..a(2, 'priority', $pb.PbFieldType.O3)
-        ..aOB(3, 'success')
-        ..hasRequiredFields = false;
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(
+      const $core.bool.fromEnvironment('protobuf.omit_message_names')
+          ? ''
+          : 'RequestConnectionPriority',
+      createEmptyInstance: create)
+    ..aOS(
+        1,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'remoteId')
+    ..a<$core.int>(
+        2,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'priority',
+        $pb.PbFieldType.O3)
+    ..aOB(
+        3,
+        const $core.bool.fromEnvironment('protobuf.omit_field_names')
+            ? ''
+            : 'success')
+    ..hasRequiredFields = false;
 
   RequestConnectionPriorityRequest._() : super();
   factory RequestConnectionPriorityRequest({
@@ -3243,7 +3259,7 @@ class RequestConnectionPriorityRequest extends $pb.GeneratedMessage {
   $core.int get priority => $_getIZ(1);
   @$pb.TagNumber(2)
   set priority($core.int v) {
-    $_setUnsignedInt32(1, v);
+    $_setSignedInt32(1, v);
   }
 
   @$pb.TagNumber(2)
