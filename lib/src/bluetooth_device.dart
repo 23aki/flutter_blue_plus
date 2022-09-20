@@ -163,6 +163,17 @@ class BluetoothDevice {
     return response;
   }
 
+  Future requestConnectionPriority(ConnectionPriority priority) async {
+    if (Platform.isAndroid) {
+      var request = protos.RequestConnectionPriorityRequest.create()
+        ..remoteId = id.toString()
+        ..priority = priority.index
+        ..success = false;
+      await FlutterBluePlus.instance._channel
+          .invokeMethod('RequestConnectionPriority', request.writeToBuffer());
+    }
+  }
+
   /// Indicates whether the Bluetooth Device can send a write without response
   Future<bool> get canSendWriteWithoutResponse =>
       Future.error(UnimplementedError());
@@ -202,3 +213,5 @@ class BluetoothDevice {
 enum BluetoothDeviceType { unknown, classic, le, dual }
 
 enum BluetoothDeviceState { disconnected, connecting, connected, disconnecting }
+
+enum ConnectionPriority { balanced, high, low_power }

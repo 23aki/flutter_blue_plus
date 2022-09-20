@@ -685,6 +685,27 @@ public class FlutterBluePlusPlugin implements FlutterPlugin, MethodCallHandler, 
         break;
       }
 
+
+      case "requestConnectionPriority": {
+        byte[] data = call.arguments();
+        Protos.RequestConnectionPriorityRequest request;
+        try {
+          request = Protos.RequestConnectionPriorityRequest.newBuilder().mergeFrom(data).build();
+        } catch (InvalidProtocolBufferException e) {
+          result.error("RuntimeException", e.getMessage(), e);
+          break;
+        }
+        BluetoothGatt gattServer;
+        try {
+          gattServer = locateGatt(request.getRemoteId());
+        } catch(Exception e) {
+          result.error("set_notification_error", e.getMessage(), null);
+          return;
+        }
+        result.success(gattServer.requestConnectionPriority(request.getPriority()));
+        break;
+      }
+
       case "readRssi":
       {
         String remoteId = (String)call.arguments;
