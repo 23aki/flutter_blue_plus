@@ -3213,8 +3213,8 @@ class RequestConnectionPriorityRequest extends $pb.GeneratedMessage {
   static RequestConnectionPriorityRequest getDefault() => _defaultInstance ??=
       $pb.GeneratedMessage.$_defaultFor<RequestConnectionPriorityRequest>(
           create);
+  static RequestConnectionPriorityRequest? _defaultInstance;
 
-  static RequestConnectionPriorityRequest _defaultInstance;
   static void $checkItem(RequestConnectionPriorityRequest v) {
     if (v is! RequestConnectionPriorityRequest)
       $pb.checkItemFailed(v, _i.qualifiedMessageName);
