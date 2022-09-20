@@ -170,7 +170,7 @@ class BluetoothDevice {
         ..priority = priority.index
         ..success = false;
       await FlutterBluePlus.instance._channel
-          .invokeMethod('RequestConnectionPriority', request.writeToBuffer());
+          .invokeMethod('requestConnectionPriority', request.writeToBuffer());
     }
   }
 
