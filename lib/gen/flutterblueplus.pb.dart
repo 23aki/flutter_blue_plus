@@ -3194,12 +3194,19 @@ class RequestConnectionPriorityRequest extends $pb.GeneratedMessage {
           [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
       create()..mergeFromJson(i, r);
 
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+      'Will be removed in next major version')
   RequestConnectionPriorityRequest clone() =>
-      new RequestConnectionPriorityRequest()..mergeFromMessage(this);
+      RequestConnectionPriorityRequest()..mergeFromMessage(this);
+  @$core.Deprecated('Using this can add significant overhead to your binary. '
+      'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+      'Will be removed in next major version')
   RequestConnectionPriorityRequest copyWith(
           void Function(RequestConnectionPriorityRequest) updates) =>
       super.copyWith(
-          (message) => updates(message as RequestConnectionPriorityRequest));
+              (message) => updates(message as RequestConnectionPriorityRequest))
+          as RequestConnectionPriorityRequest; // ignore: deprecated_member_use
   $pb.BuilderInfo get info_ => _i;
 
   @$core.pragma('dart2js:noInline')
