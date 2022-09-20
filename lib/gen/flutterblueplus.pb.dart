@@ -3169,13 +3169,31 @@ class RequestConnectionPriorityRequest extends $pb.GeneratedMessage {
         ..aOB(3, 'success')
         ..hasRequiredFields = false;
 
-  RequestConnectionPriorityRequest() : super();
-  RequestConnectionPriorityRequest.fromBuffer(List i,
-      [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY])
-      : super.fromBuffer(i, r);
-  RequestConnectionPriorityRequest.fromJson(String i,
-      [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY])
-      : super.fromJson(i, r);
+  RequestConnectionPriorityRequest._() : super();
+  factory RequestConnectionPriorityRequest({
+    $core.String? remoteId,
+    $core.int? priority,
+    $core.bool? success,
+  }) {
+    final _result = create();
+    if (remoteId != null) {
+      _result.remoteId = remoteId;
+    }
+    if (priority != null) {
+      _result.priority = priority;
+    }
+    if (success != null) {
+      _result.success = success;
+    }
+    return _result;
+  }
+  factory RequestConnectionPriorityRequest.fromBuffer($core.List<$core.int> i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromBuffer(i, r);
+  factory RequestConnectionPriorityRequest.fromJson($core.String i,
+          [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) =>
+      create()..mergeFromJson(i, r);
+
   RequestConnectionPriorityRequest clone() =>
       new RequestConnectionPriorityRequest()..mergeFromMessage(this);
   RequestConnectionPriorityRequest copyWith(
@@ -3183,40 +3201,59 @@ class RequestConnectionPriorityRequest extends $pb.GeneratedMessage {
       super.copyWith(
           (message) => updates(message as RequestConnectionPriorityRequest));
   $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
   static RequestConnectionPriorityRequest create() =>
-      new RequestConnectionPriorityRequest();
+      RequestConnectionPriorityRequest._();
   RequestConnectionPriorityRequest createEmptyInstance() => create();
-  static $pb.PbList createRepeated() => new $pb.PbList();
-  static RequestConnectionPriorityRequest getDefault() =>
-      _defaultInstance ??= create()..freeze();
+  static $pb.PbList<RequestConnectionPriorityRequest> createRepeated() =>
+      $pb.PbList<RequestConnectionPriorityRequest>();
+
+  @$core.pragma('dart2js:noInline')
+  static RequestConnectionPriorityRequest getDefault() => _defaultInstance ??=
+      $pb.GeneratedMessage.$_defaultFor<RequestConnectionPriorityRequest>(
+          create);
+
   static RequestConnectionPriorityRequest _defaultInstance;
   static void $checkItem(RequestConnectionPriorityRequest v) {
     if (v is! RequestConnectionPriorityRequest)
       $pb.checkItemFailed(v, _i.qualifiedMessageName);
   }
 
-  String get remoteId => $_getS(0, '');
-  set remoteId(String v) {
+  @$pb.TagNumber(1)
+  $core.String get remoteId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set remoteId($core.String v) {
     $_setString(0, v);
   }
 
-  bool hasRemoteId() => $_has(0);
+  @$pb.TagNumber(1)
+  $core.bool hasRemoteId() => $_has(0);
+  @$pb.TagNumber(1)
   void clearRemoteId() => clearField(1);
 
-  int get priority => $_get(1, 0);
-  set priority(int v) {
-    $_setSignedInt32(1, v);
+  @$pb.TagNumber(2)
+  $core.int get priority => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set priority($core.int v) {
+    $_setUnsignedInt32(1, v);
   }
 
-  bool hasPriority() => $_has(1);
+  @$pb.TagNumber(2)
+  $core.bool hasPriority() => $_has(1);
+  @$pb.TagNumber(2)
   void clearPriority() => clearField(2);
 
-  bool get success => $_get(2, false);
-  set success(bool v) {
+  @$pb.TagNumber(3)
+  $core.bool get success => $_getBF(2);
+  @$pb.TagNumber(3)
+  set success($core.bool v) {
     $_setBool(2, v);
   }
 
-  bool hasSuccess() => $_has(2);
+  @$pb.TagNumber(3)
+  $core.bool hasSuccess() => $_has(2);
+  @$pb.TagNumber(3)
   void clearSuccess() => clearField(3);
 }
 
